@@ -2,35 +2,28 @@
 #include "treelib.h"
 
 int main() {
-    Tree tree = {.root = NULL};
-    TreeNode_t *tnt = CreateNode(50);
-    SetRoot(&tree, tnt);
+    Tree tree = {};
+    // TreeNode_t *tnt = CreateNode("Animal");
+    // SetRoot(&tree, tnt);
     
-    TreeNode_t *tnt1 = CreateNode(20);
-    TreeNode_t *tnt2 = CreateNode(10);
-    TreeNode_t *tnt3 = CreateNode(30);
-    TreeNode_t *tnt4 = CreateNode(60);
-    TreeNode_t *tnt5 = CreateNode(52);
-    TreeNode_t *tnt6 = CreateNode(67);
+    // TreeNode_t *tnt1 = CreateNode("1.5");
+    // TreeNode_t *tnt2 = CreateNode("Teaching calculus");
+    // TreeNode_t *tnt3 = CreateNode("Redkozubov");
+    // TreeNode_t *tnt4 = CreateNode("Dedinskiy");
 
-    LinkLeft(tnt, tnt1);
-    LinkLeft(tnt1, tnt2);
-    LinkRight(tnt1, tnt3);
-    LinkRight(tnt, tnt4);
-    LinkLeft(tnt4, tnt5);
-    //LinkRight(tnt4, tnt6);
+    // LinkLeft(tnt, tnt1);
+    // LinkRight(tnt, tnt2);
+    // LinkLeft(tnt2, tnt3);
+    // LinkRight(tnt2, tnt4);
 
-    
-    
-    PrefixOutFile(tnt, "out.txt");
-    
-    Tree readed_tree = {.root = NULL};
-    ReadPrefixFromFile(&readed_tree, "out.txt");
-    //printf("\n%p\n", readed_tree.root);
-    //DumpNode(readed_tree.root);
-    //DumpNode(readed_tree.root->left);
-    //DumpNode(readed_tree.root->right);
-    CreateFileForNodeGraphicDump(readed_tree.root);
+    ReadPrefixFromFile(&tree, "out.txt");
+
+    //FindWay(&tree, "Kalinich");
+    //StartGame(&tree);
+    //DiffWays(&tree, "Varya", "Sanya");
+
+    //PrefixOutFile(tree.root, "out.txt");
+    //TreeGDToNewFile(tree.root);
     DestroyTree(&tree);
     return 0; 
 }
